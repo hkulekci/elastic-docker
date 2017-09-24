@@ -1,6 +1,5 @@
 FROM elasticsearch:5.4.0
 
-RUN bin/elasticsearch-plugin install x-pack
 RUN bin/elasticsearch-plugin install analysis-icu
 RUN bin/elasticsearch-plugin install ingest-attachment
 
