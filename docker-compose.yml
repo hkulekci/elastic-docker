@@ -15,3 +15,12 @@ services:
             - "5601:5601"
         links:
             - elasticsearch
+
+    logstash:
+        build: ./.docker/logstash
+        volumes:
+            - "./sample:/tmp/data/"
+        ports:
+            - "5044:5044"
+        links:
+            - elasticsearch
