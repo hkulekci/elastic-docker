@@ -1,4 +1,4 @@
-FROM kibana:5.4.0
+FROM docker.elastic.co/kibana/kibana:5.6.2
 
 ENV ELASTICSEARCH_URL "http://elasticsearch:9200"
 
