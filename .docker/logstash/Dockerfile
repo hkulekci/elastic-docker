@@ -1,4 +1,4 @@
-FROM docker.elastic.co/logstash/logstash:5.6.2
+FROM docker.elastic.co/logstash/logstash:6.0.0-rc1
 
 COPY conf/logstash.conf /etc/logstash/conf.d/logstash.conf
 COPY conf/template.json /etc/logstash/conf.d/template.json
