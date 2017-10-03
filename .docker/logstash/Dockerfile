@@ -1,5 +1,8 @@
 FROM docker.elastic.co/logstash/logstash:5.6.2
 
+WORKDIR /usr/share/logstash
+RUN bin/logstash-plugin install logstash-input-jdbc
+
 COPY conf/logstash.conf /etc/logstash/conf.d/logstash.conf
 COPY conf/template.json /etc/logstash/conf.d/template.json
 
