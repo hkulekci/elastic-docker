@@ -2,6 +2,9 @@ FROM logstash:5.4.0
 
 ENV ELASTICSEARCH_HOST "elasticsearch:9200"
 
+WORKDIR /usr/share/logstash
+RUN bin/logstash-plugin install logstash-input-jdbc
+
 COPY conf/logstash.conf /etc/logstash/conf.d/logstash.conf
 COPY conf/template.json /etc/logstash/conf.d/template.json
 RUN cat /etc/logstash/conf.d/logstash.conf | sed "s/ELASTICSEARCH_HOST/$ELASTICSEARCH_HOST/" > /tmp/logstash.conf.tmp
